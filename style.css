@@ -6,19 +6,16 @@ html {
 }
 
 body{
-	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	background-color: #131313;
+	font-family: "Comfortaa", sans-serif;
+	background-color: #ffffff;
 	color: #fff;
 }
 
 main {
-	background-color: #000000;
 	width: 80%;
 	margin: auto;
 	display: flex;
 	justify-content: space-around;
-	height: 100vh;
-	
 }
 
 /*General text styling*/
@@ -26,10 +23,11 @@ h1 {
 	padding: 5px;
 	padding-bottom: 15px;
 	margin: 0;
+	color:#242424;
 }
 
 h2 {
-	color:#ffffff
+	color:#131313;
 }
 
 h3 {
@@ -37,7 +35,26 @@ h3 {
 }
 
 strong {
-	color: #9e2a0d;
+	color: #3860b9;
+}
+
+#logo {
+	font-size: 6rem;
+	padding-bottom: 0;
+	margin-bottom: 0;
+	
+	background: -webkit-linear-gradient(75deg, #4592e9, #ffffff);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+#slogan {
+	font-size: 4rem;
+	padding: 0;
+	margin-top: 0;
+	background: -webkit-linear-gradient(360deg, #4592e9, #ffffff);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 /*Achievements popup*/
@@ -52,8 +69,13 @@ strong {
     width: 400px;
 	display: none;
 	border-radius: 15px;
-	border: 1px solid #384471;
+	border: 1px solid #c2c7da;
 	z-index: 10;
+}
+
+#achievement-title {
+	
+	color: #fff;
 }
 
 .popup button {
@@ -74,6 +96,16 @@ strong {
 	display: none;
 }
 
+#close {
+	background-color: #68a7f077;
+	color: #000000;
+}
+
+#close:hover {
+	background-color: #15304e;
+	color: #fff
+}
+
 #blur {
 	filter: blur(4px);
 	transition: all ease-in-out .2s;
@@ -91,24 +123,48 @@ form {
 }
 
 button, select, input[type="text"] {
-	height: 25px;
+	height: 35px;
 	border-radius: 5px;
 	border: none;
 	box-sizing: border-box;
 	margin: 5px;
 	overflow: hidden;
+	border: 1px solid #eafdff;
 }
 
 button {
 	cursor: pointer;
 	width: 100%;
-	background-color: #353535;
-	color: #cecece;
+	background-color: #3860b9;
+	color: #ffffff;
 }
 
 button:hover {
-	background-color: #2e1d1d;
+	background-color: #3b6ada;
 	color: #fff;
+}
+
+input[type="text"]:focus {
+	outline:none;
+	border-color: #baccff;
+}
+
+#difficulty:focus {
+	border-color: #baccff;
+	outline:none;
+}
+
+#difficulty:focus:after {
+	border-color: #baccff;
+	outline:none;
+}
+
+select > option {
+	background-color: #e1f4ff;
+	color: #222222;
+	font-family: "Comfortaa", sans-serif;
+	padding: 5px;
+	width: 50px;
 }
 
 /*Dark & lightmode*/
@@ -145,13 +201,16 @@ button:hover {
 
 /*List styling*/
 ul {
+	min-height: 500px;
 	list-style: none;
 	margin: 0px;
-	padding: 0px;
+	padding: 5px;
+	background-color: #d5ebff;
+	border-radius: 5px;
 }
 
 li {
-	background-color: #3d3d3d;
+	background-color: #3860b9;
 	padding: 10px;
 	margin: 5px;
 	font-size: 19px;
@@ -164,16 +223,21 @@ li {
 }
 
 li:hover {
-	background-color: #301e1e;
+	background-color: #2c4c91;
 }
 
 .todo-list, .stats, .achievements {
 	width: 400px;
 	margin: auto;
 	text-align: center;
-	background-color: #1f1f1f;
+	background-color: #f6fcff;
 	padding: 20px;
 	border-radius: 15px;
+	border: 1px solid #e6eeff;
+}
+
+.todo-list {
+	min-height: 800px;
 }
 
 #badges > li > img {

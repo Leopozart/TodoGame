@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <title>TodoGame</title>
 	<link href="style.css" type="text/css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
   </head>
   <body>
 	<div class="popup">
@@ -14,14 +17,17 @@
 	</div>
 	<button id="light-mode"><s>light-mode</s> (Out of order)</button>
 	<main class="main">
-		<div class="achievements">
-			<h2>Achievements</h2>
-			<ul id="badges"></ul>
-		</div>
+		<section>
+			<h1 id="logo">TodoGame</h1>
+			<h2 id="slogan">Gamify your life</h2>
+			<div class="achievements">
+				<h2>Achievements</h2>
+				<ul id="badges"></ul>
+			</div>
+		</section>
 		<div class="todo-list">
 			<h2>Elo: <strong class="elo">0</strong></h2>
 			<h2>Level: <strong class="level">0</strong></h2>
-			<h1>TodoGame</h1>
 			<form>
 				<input type="text" id="new-item" placeholder="Todo item...">
 				<select name="difficulty" id="difficulty">
