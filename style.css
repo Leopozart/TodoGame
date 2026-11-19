@@ -149,11 +149,11 @@ button:hover {
 }
 
 #light-mode {
-	width: 30px;
+	width: 50px;
 }
 
 #dark-mode {
-	width: 30px;
+	width: 50px;
 }
 
 input[type="text"]:focus {
