@@ -8,26 +8,27 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
   </head>
-  <body>
+  <body id="light-theme">
 	<div class="popup">
 		<h2 id="achievement-title">Achievement</h2>
 		<img id="achievement-image" src="" alt="achievement image" width="80px"/>
 		<p id="achievement-description">Achievement description</p>
 		<button id="close">Close</button>
 	</div>
-	<button id="light-mode"><s>light-mode</s> (Out of order)</button>
-	<main class="main">
+	<div light-btns>
+		<button class="light-btn" id="light-mode">light-mode</button>
+		<button class="light-btn" id="dark-mode">dark-mode</button>
+	</div>
+	<main class="main" id="light-main">
 		<section>
-			<h1 id="logo">TodoGame</h1>
-			<h2 id="slogan">Gamify your life</h2>
-			<div class="achievements">
+			<div class="achievements" id="light-colors">
 				<h2>Achievements</h2>
 				<ul id="badges"></ul>
 			</div>
 		</section>
-		<div class="todo-list">
-			<h2>Elo: <strong class="elo">0</strong></h2>
-			<h2>Level: <strong class="level">0</strong></h2>
+		<div class="todo-list" id="light-colors">
+			<h1 id="logo">TodoGame</h1>
+			<h2 id="slogan">Gamify life</h2>
 			<form>
 				<input type="text" id="new-item" placeholder="Todo item...">
 				<select name="difficulty" id="difficulty">
@@ -38,14 +39,18 @@
 					<option value="4">Quite Difficult</option>
 					<option value="5">Hard</option>
 				</select>
-				<button id="add-btn">Add item</button>
+				<button class="light-btn" id="add-btn">Add item</button>
 			</form>
 			
 			<ul id="items"></ul>
 		</div>
-		<div class="stats">
+		<div class="stats" id="light-colors">
 			<h2>Stats</h2>
-			<p>tasks completed:<strong id="tasks-completed"></strong></p>
+			<ul>
+				<h2>Elo: <strong class="elo">0</strong></h2>
+				<h2>Level: <strong class="level">0</strong></h2>
+				<p>tasks completed:<strong id="tasks-completed"></strong></p>
+			</ul>
 		</div>
 	</main>
 	

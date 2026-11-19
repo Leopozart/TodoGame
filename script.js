@@ -1,15 +1,41 @@
 let completedTasks = 0
 
-let darkMode = true
+let darkMode = false
 
-//Control of dark/lightmode
-/*$("#light-mode").on("click", function() {
-    $("body").attr("id", "light-theme")
-    $(".todo-list, .achievements, .stats").attr("id", "light-colors")
-    $("main").attr("id", "light-main")
-    $("li").attr("id", "light-li")
+document.addEventListener("DOMContentLoaded", (event) => {
+    let list = ["2", "1"]
+    localStorage.setItem("achievements", JSON.stringify(list));
+
+    const achievements = JSON.parse(localStorage.getItem("achievements"));
+
+    for(let i = 0;i < achievements.length; i++ ) {
+        console.log("this is an achievement", achievements[i])
+    }
+    //1. Fetch list of names of all achievements unlocked in local storage
+    //2. Print corresponding achievements on to achievements tab
+});
+
+//Set lightmode
+$("#light-mode").on("click", function() {
+    $("[id*='dark']").attr("id", function(i, oldId) {
+        return oldId.replace("dark", "light");
+    });
+    $("[class*='dark']").attr("class", function(i, oldClass) {
+        return oldClass.replace("dark", "light");
+    });
     darkMode = false
-})*/
+})
+
+//Set darkmode
+$("#dark-mode").on("click", function() {
+    $("[id*='light']").attr("id", function(i, oldId) {
+        return oldId.replace("light", "dark");
+    });
+    $("[class*='light']").attr("class", function(i, oldClass) {
+        return oldClass.replace("light", "dark");
+    });
+    darkMode = true
+})
 
 //Adds Todos
 $("#add-btn").on("click", function(e) {
@@ -20,7 +46,16 @@ $("#add-btn").on("click", function(e) {
 
     //Validates input
     if (item.trim() !== '' && difficulty !== '0') {
-        $("#items").append(`<li data-difficulty="${difficulty}"> 
+        let mode = ''
+
+        //Darkmode on list items
+        if (darkMode == false) {
+            mode = 'light'
+        } else {
+            mode = 'dark'
+        }
+
+        $("#items").append(`<li class="${mode}-li" data-difficulty="${difficulty}"> 
             ${item}
             <span class="points">${difficulty}</span>
         </li>`);
@@ -29,12 +64,7 @@ $("#add-btn").on("click", function(e) {
         $("#new-item").val("");
         $("#difficulty").val("0");
 
-        //Darkmode on list items
-        /*if (darkMode == false) {
-            $("li").attr("id", "light-li")
-        } else {
-            $("li").attr("id", "dark-li")
-        }*/
+        
     } else {
         alert("Du måste ange ett värde")
     }
@@ -59,23 +89,32 @@ function countPoints(difficulty) {
 
 //Achievements
 function achievements(level) {
+    let mode = ''
+
+    //Darkmode on list items
+    if (darkMode == false) {
+        mode = 'light'
+    } else {
+        mode = 'dark'
+    }
+
     if ($("#level-" + level).length == 0) {
         if(level == 1) {
-            alert('New achievement unlocked: "Basement dweller"')
-            $("#badges").append(`<li id='level-${level}'>
+            alert('New achievement unlocked: "Beginner"')
+            $("#badges").append(`<li class="${mode}-li" id='level-${level}'>
                 <img src="img/rat.png"/> 
-                <h3>Basement dwelller</h3>
+                <h3>Beginner</h3>
             </li>`)
         } else if(level == 2) {
             alert('New achievement unlocked: "On A Roll"')
-            $("#badges").append(`<li id='level-${level}'>
-                <img src="img/rollpng.png"/> 
+            $("#badges").append(`<li class="${mode}-li" id='level-${level}'>
+                <img src="img/star.png"/> 
                 <h3>On A Roll</h3>
             </li>`)
         }else if(level == 0) {
             alert('New achievement unlocked! "First step"')
-            $("#badges").append(`<li id='level-${level}'>
-                <img src="img/one.png"/> 
+            $("#badges").append(`<li class="${mode}-li" id='level-${level}'>
+                <img src="img/number-one.png"/> 
                 <h3>First step</h3>
             </li>`)
         }
@@ -101,7 +140,6 @@ $(".achievements").on("click", "li", function() {
     let id = li.attr("id")
     console.log(id)
 
-
     let lvlZero = "You completed your first task, congratulations! Keep it up."
     let lvlOne = "You have gained 10 elo! Don't stop now"
     let lvlTwo = "You have gained 20 elo! You are on fire!"
@@ -113,7 +151,6 @@ $(".achievements").on("click", "li", function() {
     } else if (id == "level-2"){
         $("#achievement-description").html(lvlTwo)
     }
-
 
     $(".popup").attr("id", "open")
     $(".main").attr("id", "blur")

@@ -7,15 +7,14 @@ html {
 
 body{
 	font-family: "Comfortaa", sans-serif;
-	background-color: #ffffff;
-	color: #fff;
+	background-color: #d5f2fd;
 }
 
 main {
 	width: 80%;
 	margin: auto;
 	display: flex;
-	justify-content: space-around;
+  	justify-content: space-around;
 }
 
 /*General text styling*/
@@ -27,7 +26,7 @@ h1 {
 }
 
 h2 {
-	color:#131313;
+	color:#53aefd;
 }
 
 h3 {
@@ -35,21 +34,20 @@ h3 {
 }
 
 strong {
-	color: #3860b9;
+	color: #2f4a9e;
 }
 
 #logo {
-	font-size: 6rem;
+	font-size: 3rem;
 	padding-bottom: 0;
 	margin-bottom: 0;
-	
 	background: -webkit-linear-gradient(75deg, #4592e9, #ffffff);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
 
 #slogan {
-	font-size: 4rem;
+	font-size: 2rem;
 	padding: 0;
 	margin-top: 0;
 	background: -webkit-linear-gradient(360deg, #4592e9, #ffffff);
@@ -74,7 +72,6 @@ strong {
 }
 
 #achievement-title {
-	
 	color: #fff;
 }
 
@@ -134,14 +131,29 @@ button, select, input[type="text"] {
 
 button {
 	cursor: pointer;
-	width: 100%;
-	background-color: #3860b9;
+	background-color: #238bb3;
 	color: #ffffff;
 }
 
 button:hover {
-	background-color: #3b6ada;
+	background-color: #39a0c9;
 	color: #fff;
+}
+
+#add-btn {
+	width: 100%;
+}
+
+#light-btns {
+	display:flex;
+}
+
+#light-mode {
+	width: 30px;
+}
+
+#dark-mode {
+	width: 30px;
 }
 
 input[type="text"]:focus {
@@ -167,41 +179,61 @@ select > option {
 	width: 50px;
 }
 
-/*Dark & lightmode*/
-/*#dark-li {
-	background-color: #3d3d3d;
+/*Darkmode*/
+#dark-theme {
+	background-color: #0c1c22;
 }
 
+.dark-li {
+	background-color: #0e3849;
+	color: #ffffff;
+}
+
+.dark-li:hover {
+	background-color: #133542;
+}
+
+#dark-colors {
+	background-color: #113a4b;
+}
+
+.dark-btn {
+	background-color: #041d27;
+}
+
+#dark-colors h2, h3{
+	color:#98c9f4;
+}
+
+/*Lightmode*/
 #light-theme {
-	background-color: #fff;
+	background-color: #d5f2fd;
+}
+
+.light-li {
+	background-color: #238bb3;
 	color: #000;
 }
 
-#light-li {
-	background-color: #cccccc;
-	color: #000;
-}
-
-#light-li:hover {
-	background-color: #c78888;
+.light-li:hover {
+	background-color: #38a6d1;
 }
 
 #light-colors {
-	background-color: #f8f8f8;
-	color: #000;
+	background-color: #238bb3;
 }
 
-#light-main {
-	background-color: #c4c4c4;
+.light-btn {
+	background-color: #16546c;
 }
 
 #light-colors h2, h3{
-	color: #000;
-}*/
+	color:#53aefd;
+}
 
 /*List styling*/
 ul {
-	min-height: 500px;
+	min-height: 300px;
 	list-style: none;
 	margin: 0px;
 	padding: 5px;
@@ -210,7 +242,6 @@ ul {
 }
 
 li {
-	background-color: #3860b9;
 	padding: 10px;
 	margin: 5px;
 	font-size: 19px;
@@ -223,21 +254,22 @@ li {
 }
 
 li:hover {
-	background-color: #2c4c91;
 }
 
 .todo-list, .stats, .achievements {
 	width: 400px;
-	margin: auto;
 	text-align: center;
-	background-color: #f6fcff;
+	background-color: #238bb3;
 	padding: 20px;
 	border-radius: 15px;
 	border: 1px solid #e6eeff;
 }
+.stats {
+	height: fit-content;
+}
 
-.todo-list {
-	min-height: 800px;
+.todo-list ul{
+	min-height: 157px;
 }
 
 #badges > li > img {
