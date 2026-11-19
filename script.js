@@ -102,19 +102,28 @@ function achievements(level) {
         if(level == 1) {
             alert('New achievement unlocked: "Beginner"')
             $("#badges").append(`<li class="${mode}-li" id='level-${level}'>
-                <img src="img/rat.png"/> 
+                <div class="tooltip">
+                    <img src="img/rat.png"/> 
+                    <span class="tooltiptext">Rat icons created by Magnific - Flaticon</span>
+                </div>
                 <h3>Beginner</h3>
             </li>`)
         } else if(level == 2) {
             alert('New achievement unlocked: "On A Roll"')
             $("#badges").append(`<li class="${mode}-li" id='level-${level}'>
-                <img src="img/star.png"/> 
+                <div class="tooltip">    
+                    <img src="img/star.png"/> 
+                    <span class="tooltiptext">Star icons created by Magnific - Flaticon</span>
+                </div>
                 <h3>On A Roll</h3>
             </li>`)
         }else if(level == 0) {
             alert('New achievement unlocked! "First step"')
             $("#badges").append(`<li class="${mode}-li" id='level-${level}'>
-                <img src="img/number-one.png"/> 
+                <div class="tooltip">    
+                    <img src="img/number-one.png"/> 
+                    <span class="tooltiptext">Number one icons created by Hight Quality Icons - Flaticon</span>
+                </div>
                 <h3>First step</h3>
             </li>`)
         }
